@@ -47,7 +47,8 @@ if (isset($_POST['submit'])) {
         $sqlCourse = "SELECT * FROM course WHERE id = $course_id";
         $course = mysqli_query($conn, $sqlCourse);
         $course = mysqli_fetch_assoc($course);
-        mail($email, 'Confirm your course', $course['name']);
+        header('location: index.php');
+        exit;
       }
     }
   }
@@ -67,7 +68,7 @@ if (isset($_POST['submit'])) {
         <?php foreach ($errors as $key => $value) { ?>
 
           <strong>
-            <?= $value."<br>" ?>
+            <?= $value . "<br>" ?>
           </strong>
         <?php } ?>
       </div>
