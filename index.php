@@ -44,9 +44,6 @@ if (isset($_POST['submit'])) {
       $query2 = mysqli_query($conn, $sql);
 
       if ($query2) {
-        $sqlCourse = "SELECT * FROM course WHERE id = $course_id";
-        $course = mysqli_query($conn, $sqlCourse);
-        $course = mysqli_fetch_assoc($course);
         header('location: index.php');
         exit;
       }
